@@ -1,0 +1,103 @@
+:root {
+  --main-color: rgb(0, 110, 255);
+  --secondary-color: rgb(255, 255, 255);
+  --hoversecondary-color: rgb(148, 255, 255);
+  --nav-color: rgb(0, 0, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+nav {
+  height: 100%;
+  width: 50%;
+  background-color: var(--nav-color);
+  opacity: 0.8;
+  position: fixed;
+  left: -100%;
+  z-index: 1;
+  text-align: center;
+}
+
+.menu {
+  font-size: 2rem;
+}
+
+.mb-5 {
+  margin-bottom: 20%;
+}
+
+nav ul {
+  margin-left: 5%;
+  margin-top: 13%;
+}
+
+nav ul li {
+  margin: 5%;
+  list-style: none;
+}
+
+nav ul li a,
+nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--main-color);
+}
+
+button,
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  background-color: var(--main-color) !important;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.encabezado {
+  background-color: var(--main-color);
+  height: 100px;
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.encabezado h2 {
+  text-align: center;
+  position: relative;
+  top: 33px;
+  color: var(--secondary-color);
+}
+
+.secciones {
+  height: 700px;
+  width: 100%;
+  text-align: center;
+}
+
+.secciones h3 {
+  padding-top: 1rem;
+}
+
+hr {
+  color: black;
+  border: var(--main-color) 1px solid;
+}
