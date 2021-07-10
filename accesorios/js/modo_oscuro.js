@@ -18,7 +18,7 @@ export default function darkMode(btn) {
       );
       $darkModeBtn.style.setProperty(
         "background-image",
-        `url("/MinipaginaDOM/accesorios/img/Sol.png")`
+        `url("accesorios/img/Sol.png")`
       );
       ls.setItem("theme", "light");
       return (day = false);
@@ -33,7 +33,7 @@ export default function darkMode(btn) {
       );
       $darkModeBtn.style.setProperty(
         "background-image",
-        `url("/MinipaginaDOM/accesorios/img/Luna.png")`
+        `url("accesorios/img/Luna.png")`
       );
       ls.setItem("theme", "dark");
       return (day = true);

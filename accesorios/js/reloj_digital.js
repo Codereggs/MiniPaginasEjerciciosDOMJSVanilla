@@ -8,7 +8,7 @@ const d = document,
 
 //Variables
 let audioElement = new Audio(
-    "http://www.sonidosmp3gratis.com/sounds/alarm-loud.mp3"
+  "accesorios/sound/alarm-loud.mp3"
   ),
   despues = undefined,
   ahora = undefined,
