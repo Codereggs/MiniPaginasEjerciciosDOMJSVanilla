@@ -11,11 +11,13 @@ export default function scrollTop(scrollBtn) {
   });
 
   d.addEventListener("click", (e) => {
-    if (e.target.matches(scrollBtn))
+    //console.log(e.target);
+    if (e.target === $scrollBtn){
       e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
+    }
   });
 }
