@@ -59,9 +59,9 @@ export default function userDeviceInfo(id) {
     $id.innerHTML +=
       "<br><p><mark>Este contenido solo se ve en Windows<mark></p>";
   }
-
+/*
   //*Redirecciones*
   if (isMobile.android()) {
     w.location.href = "https://codereggs.tech/wordpress";
-  }
+  }*/
 }
