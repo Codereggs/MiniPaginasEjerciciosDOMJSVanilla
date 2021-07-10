@@ -5,7 +5,7 @@ const d = document,
 export default function networkStatus() {
   const isOnLine = () => {
     const $div = d.createElement("div");
-    console.log(n.onLine);
+    //console.log(n.onLine);
 
     if (n.onLine) {
       $div.textContent = "Conexión Reestablecida";
@@ -18,7 +18,7 @@ export default function networkStatus() {
     }
 
     d.body.insertAdjacentElement("afterbegin", $div);
-    setTimeout(() => d.body.removeChild($div), 2000);
+    setTimeout(() => d.body.removeChild($div), 7000);
   };
 
   w.addEventListener("online", (e) => isOnLine());

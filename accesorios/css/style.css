@@ -434,7 +434,7 @@ input#ancho::placeholder, input#alto::placeholder {
 }
 
 .card {
-  background-color: var(--darkMode-color);
+  background-color: var(--nav-color);
   color: var(--secondary-color);
   transition: all 0.3 ease-out;
 }
@@ -640,6 +640,8 @@ input#ancho::placeholder, input#alto::placeholder {
   font-size: 1rem;
   background-color: var(--black-color);
   color:var(--secondary-color);
+  padding: 0.5rem;
+  border-radius: 5px;
  }
 
  #vFormulario input[type="submit"]:hover {
@@ -729,6 +731,8 @@ input#ancho::placeholder, input#alto::placeholder {
    color:var(--secondary-color);
   cursor: pointer;
   width: fit-content;
+  padding: 0.5rem;
+  border-radius: 5px;
  }
 
  .narrador #formularioVoz #botonVoz:hover {
