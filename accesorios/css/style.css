@@ -1,61 +1,63 @@
+/*Reseteo Inicio*/
+
 :root {
+  --main-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --main-color: rgb(0, 110, 255);
   --secondary-color: rgb(255, 255, 255);
   --hoversecondary-color: rgb(148, 255, 255);
-  --nav-color: rgb(0, 0, 0);
-}
-
-* {
-  margin: 0;
-  padding: 0;
+  --nav-color: rgb(0, 0, 0, 0.7);
+  --container-width: 1200px;
+  --darkMode-color: rgb(0, 0, 0, 0.7);
+  --black-color: rgb(15, 15, 15);
+  --placeholder-color : rgb(120, 120, 120);
+  --form-ok-color: rgb(0, 240, 12);
+  --form-error-color: rgb(201, 0, 3);
 }
 
 html {
-  margin: 0 auto;
-  padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  font-family: var(--main-font);
   scroll-behavior: smooth;
 }
 
-nav {
-  height: 100%;
-  width: 50%;
-  background-color: var(--nav-color);
-  opacity: 0.8;
-  position: fixed;
-  left: -100%;
-  z-index: 1;
-  text-align: center;
+*,*::before,*::after {
+  box-sizing: inherit;
+  margin:0;
 }
 
-.menu {
-  font-size: 2rem;
+body {
+  margin:inherit;
+  overflow-x:hidden;
 }
 
-.mb-5 {
-  margin-bottom: 20%;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-nav ul {
-  margin-left: 5%;
-  margin-top: 13%;
-}
-
-nav ul li {
-  margin: 5%;
+li {
   list-style: none;
 }
+/*----------------Reseteo FIN--------------------- */
 
-nav ul li a,
-nav a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  font-size: 1.4rem;
+/* Menu de Hamburguesa */
+
+.panel {
+  position: fixed;
+  z-index: 998;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  width:100%;
+  background-color: var(--nav-color);
+  transition: transform 0.3s ease;
+  transform: translate(-100%,0);
+  overflow-y: auto;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-  color: var(--main-color);
+.panel.is-active {
+  transform: translate(0,0);
 }
 
 button,
@@ -67,37 +69,673 @@ button,
   right: 30px;
   background-color: var(--main-color) !important;
   border-radius: 4px;
-  z-index: 2;
+  z-index: 999;
 }
 
-.encabezado {
+
+/* Encabezado */
+
+header.encabezado {
+  position: sticky;
+  top: 0;
   background-color: var(--main-color);
-  height: 100px;
-  width: 100%;
+  color: var(--secondary-color);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  padding: 1.5rem;
+  z-index: 997;
+}
+
+header.encabezado h2 {
   margin: 0 auto;
-  padding: 0;
-}
-
-.encabezado h2 {
   text-align: center;
-  position: relative;
-  top: 33px;
-  color: var(--secondary-color);
 }
 
-.secciones {
-  height: 700px;
+/* Menú */
+.menu {
+  width:inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.menu a {
+  padding: 2rem;
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color:var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.menu a:hover{
+  font-weight: bold;
+  color:var(--hoversecondary-color);
+  background-color: var(--main-color);
+}
+
+/*Secciones */
+
+section.secciones {
+  padding: 2rem;
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
+  min-height: 100vh;
   text-align: center;
 }
 
 .secciones h3 {
   padding-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 hr {
   color: black;
   border: var(--main-color) 1px solid;
 }
+
+/*Contenido Reloj */
+/*Boton horas*/
+/* The switch - the box around the slider */
+.horaMilitar {
+margin:0 auto;
+text-align: center;
+font-size: 1rem;
+position: relative;
+top:5px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--main-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--main-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/*Fin Boton*/
+
+.tiempo h3 {
+  margin: 2rem;
+}
+.myButton {
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	background-color:#2dabf9;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+  margin-bottom: 1rem;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	background-color:#0688fa;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton.desactivated { 
+  box-shadow:inset 0px -3px 7px 0px #d1d1d1;
+	background:linear-gradient(to bottom, #c4c4c4 5%, #686868 100%);
+	background-color:#2dabf9;
+	color:#ffffff;
+}
+
+.relojDigital {
+  margin: 1rem;
+  font-size: 2rem;
+  color:var(--main-color);
+}
+
+.alarm {
+  margin: 2rem;
+}
+
+.alarmaActual {
+  margin-top: 1rem;
+}
+
+select#horas, select#minutos, select#segundos {
+  margin-bottom: 1rem;
+} 
+
+/*Colisiones y eventos del teclado*/
+
+.stage {
+  display: flex;
+  min-height: 110vh;
+  background-color: var(--main-color);
+  background-image: url("/MinipaginaDOM/accesorios/img/football.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ball {
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  background-image: url("/MinipaginaDOM/accesorios/img/pelota.png");
+  background-size: cover;
+}
+
+/*ScrollTop Button*/
+
+#scrollTopButton {
+  display: inline-block;
+  background-color: var(--main-color);
+  width:70px;
+  height: 58px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 20px;
+  right: 110px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 997;
+  text-decoration: none;
+}
+#scrollTopButton::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+
+
+#scrollTopButton:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+#scrollTopButton.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTopButton:hover {
+  cursor: pointer;
+  opacity:0.7;
+}
+
+
+
+/* Dark Mode Button */
+
+#darkModeButton {
+  display: flex;
+  align-items: center;
+  background-image: url("/MinipaginaDOM/accesorios/img/Luna.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--main-color);
+  width:70px;
+  height: 58px;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  transition: background-color .3s;
+  z-index: 996;
+  
+}
+
+#darkModeButton img{
+
+  margin:auto;
+  width:70%; 
+
+}
+
+#darkModeButton:hover {
+  cursor: pointer;
+  background-color: var(--darkMode-color);
+}
+
+#darkModeButton:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+
+/*Responsive tester*/
+
+input#ancho, input#alto {
+ width: 11rem;
+}
+
+input#ancho::placeholder, input#alto::placeholder {
+  text-align: center;
+}
+
+
+/*Detección de redes*/
+.online, .offline {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: darkgreen;
+  color: #fff;
+}
+
+.offline {
+  background-color: red;
+}
+
+#videocam {
+  display: inline-block;
+  cursor: pointer;
+  position: static;
+  background-color: var(--secondary-color) !important;
+  border-radius: 3px;
+  z-index: 0;
+  margin-top: 1rem;
+}
+
+/*Boton Geolocalización*/
+
+#geobtn {
+  display: inline-block;
+  cursor: pointer;
+  position: static;
+  background-color: var(--secondary-color) !important;
+  border-radius: 3px;
+  z-index: 0;
+  margin-top: 1rem;
+}
+#geolocation>ul {
+  padding:0px;
+  font-weight: bold;
+}
+
+/*----------------Search Filters----------------*/
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  grid-column-gap: 2%;
+  grid-row-gap: 2%;
+}
+
+.card {
+  background-color: var(--darkMode-color);
+  color: var(--secondary-color);
+  transition: all 0.3 ease-out;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card figcaption{
+  padding: 1rem;
+}
+
+ .filter {
+   /*display: none;*/
+   visibility: hidden;
+   opacity: 0;
+   order: 1;
+ }
+
+ .card-filter {
+   margin-bottom: 2rem;
+ }
+
+ /* Sorteo Button */
+
+.sorteoDigital {
+  padding:0px;
+  font-weight: bold;
+}
+
+ .botonSorteo {
+  display: inline-block;
+  cursor: pointer;
+  position: static;
+  background-color: var(--secondary-color) !important;
+  border-radius: 3px;
+  z-index: 0;
+  margin-top: 1rem;
+ }
+
+ /*Responsive Slider*/
+ .sliderResp {
+   position: relative;
+   width: 80%;
+   margin: 1rem auto;
+   text-align: center;
+ }
+
+ .slider-slides {
+   position: relative;
+   height: 400px;
+ }
+
+ .slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+   height: 100%;
+   width: 100%;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 1s ease;
+ }
+ .slider-slide img{
+   height:inherit;
+   width: inherit;
+   object-fit: cover;
+   object-position: 50% 20%;
+ }  
+ 
+
+ .slider-slide.active {
+   opacity: 1;
+   visibility: visible;
+ }
+
+ .slider-btn {
+   position: absolute;
+   width: 100%;
+   top: 50%;
+   display: flex;
+   justify-content: space-between;
+   
+   font-weight: bold;
+ }
+
+ .slider-btn a{
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: thin solid #000;
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .slider-btn a:hover {
+    color: var(--main-color);
+ }
+
+ /******************** Scroll spy **********************/
+ @media screen and (min-width: 1024px) {
+  
+
+   body {
+     display: grid;
+     grid-template-columns: 20% 80%;
+     grid-template-rows: 4rem auto;
+     grid-template-areas: 
+     "header header"
+     "panel  main";
+   }
+
+   main {
+     grid-area: main;
+   }
+
+   .encabezado {
+     grid-area: header;
+     border-bottom-left-radius: 0px !important;
+   }
+   .panel::-webkit-scrollbar {display: none;}
+   .panel {
+     grid-area: panel;
+     align-self: start;
+     position: fixed;
+     width: 20%;
+     top: 4rem;
+     justify-content: flex-start;
+     opacity: 1;
+     background-color: var(--black-color);
+     visibility: visible;
+     transform: translate(0,0);
+     overflow-y: auto;
+     box-shadow: 1px 10px 10px 1px #0b0e07;
+     z-index: 999;
+   } 
+
+   .hamburger {
+     display:none !important;
+     
+   }
+
+   .menu {
+     justify-content: start;
+     text-align: start;
+     width: 100%;
+   }
+   .menu a {
+     font-size: 0.94rem;
+     padding: 1rem;
+   }
+
+   .menu a:hover, .menu a.active{
+    font-weight: bold;
+    color:var(--hoversecondary-color);
+    background-color: var(--main-color);
+  }
+   #darkModeButton {
+      left: auto;
+     right: 30px !important;
+   }
+
+ }
+
+ /*---------- FORMS----------*/
+
+ #vFormulario {
+   display:flex;
+   justify-content: center;
+   text-align: center;
+   flex-direction: column;
+   
+ }
+
+ #vFormulario legend {
+   font-weight: bold;
+   font-size: 1.1rem;
+   margin-bottom: 1rem;
+ }
+
+ #vFormulario input, #vFormulario textarea {
+   margin: 0.3rem;
+   padding: 0.5rem;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   resize: none;
+   border-radius: 5px;
+ }
+
+ #vFormulario input::placeholder, #vFormulario textarea::placeholder {
+   color: var(--placeholder-color);
+ }
+
+ #vFormulario input[type="submit"] {
+  width:fit-content;
+  align-self: center;
+  cursor:pointer;
+  font-size: 1rem;
+  background-color: var(--black-color);
+  color:var(--secondary-color);
+ }
+
+ #vFormulario input[type="submit"]:hover {
+   background-color: var(--main-color);
+   color: var(--hoversecondary-color);
+ }
+ 
+ #vFormulario [required]:valid {
+   border: thin solid var(--form-ok-color);
+ }
+
+ #vFormulario [required]:invalid {
+   border: thin solid var(--form-error-color);
+ }
+
+ .contact-form-error {
+    margin:0.3rem;
+    margin-top: -0.2rem;
+    font-size: 80%;
+    color:#ff0004;
+    transition: all 800ms ease;
+ }
+
+ .contact-form-error.is-active {
+   display:inherit;
+   animation: shown-message 1s 1 normal 0s ease-out both;
+ }
+
+ .contact-form-response p {
+   color: var(--main-color);
+   font-size: 1.2rem;
+
+ }
+
+ .none {
+   display: none !important;
+   visibility: hidden;
+ }
+
+ @keyframes shown-message {
+   0% {
+     visibility: hidden;
+     opacity: 0;
+   }
+   100% {
+     visibility: visible;
+     opacity: 1;
+   }
+ }
+
+ /*Narrador de Voz*/
+
+ .narrador {
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   text-align: center;
+  
+ }
+
+ .narrador > *{
+   margin: 0.3rem;
+ }
+
+ #voiceSelect {
+   width:50%;
+   align-self: center;
+ }
+
+ .narrador #formularioVoz {
+   display: inherit;
+   flex-direction: inherit;
+   align-content: inherit;
+   text-align: inherit;
+ }
+
+ .narrador #formularioVoz > * {
+   width: 50%;
+   align-self: center;
+   margin: 0.3rem;
+ }
+
+
+ .narrador #formularioVoz #botonVoz {
+   font-size: 1rem;
+   background-color: var(--black-color);
+   color:var(--secondary-color);
+  cursor: pointer;
+  width: fit-content;
+ }
+
+ .narrador #formularioVoz #botonVoz:hover {
+  background-color: var(--main-color);
+  color: var(--hoversecondary-color);
+ }
+
+ #texto {
+   resize: none;
+ }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="accesorios/img/favicon.ico" type="image/x-icon">
     <!--Los Meta-->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,43 +16,389 @@
       href="accesorios/hamburguer/dist/hamburgers.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <!-- Nav -->
-    <nav>
-      <ul>
-        <li class="mb-5">
-          <a href="#inicio" class="nav-seccion menu">Menu</a>
-        </li>
-        <li><a href="#seccion1" class="nav-seccion">Sección 1</a></li>
-        <li><a href="#seccion2" class="nav-seccion">Sección 2</a></li>
-        <li><a href="#seccion3" class="nav-seccion">Sección 3</a></li>
-        <li><a href="#seccion4" class="nav-seccion">Sección 4</a></li>
-        <li><a href="#seccion5" class="nav-seccion">Sección 5</a></li>
-      </ul>
-    </nav>
-    <!--Boton hamburguesa-->
-    <button class="hamburger hamburger--collapse" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
-    <!-- Encabezado -->
-    <header class="encabezado" id="inicio">
+
+     <!-- Encabezado -->
+     <header class="encabezado">
       <h2>Ejercitando el DOM</h2>
     </header>
 
+      <!--Boton hamburguesa-->
+      <button class="hamburger hamburger--collapse" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+
+    <!-- Nav -->
+  <aside class="panel">
+    <nav class="menu" id="inicio">
+        <a href="#seccion1" class="nav-seccion" data-scroll-spy>Reloj Digital y Alarma Sonora</a>
+        <a href="#seccion2" class="nav-seccion" data-scroll-spy>Eventos del Teclado</a>
+        <a href="#seccion3" class="nav-seccion" data-scroll-spy>Temporizador</a>
+        <a href="#seccion4" class="nav-seccion" data-scroll-spy>Responsive con Javascript</a>
+        <a href="#seccion5" class="nav-seccion" data-scroll-spy>Responsive Tester</a>
+        <a href="#seccion6" class="nav-seccion" data-scroll-spy>Detección de dispositivos (User Agent)</a>
+        <a href="#seccion7" class="nav-seccion" data-scroll-spy>Detección de red</a>
+        <a href="#seccion8" class="nav-seccion" data-scroll-spy>Detección de Camara</a>
+        <a href="#seccion9" class="nav-seccion" data-scroll-spy>Geolocalización</a>
+        <a href="#seccion10" class="nav-seccion" data-scroll-spy>Filtro de búsqueda</a>
+        <a href="#seccion11" class="nav-seccion" data-scroll-spy>Sorteo Digital</a>
+        <a href="#seccion12" class="nav-seccion" data-scroll-spy>Responsive Slider</a>
+        <a href="#seccion13" class="nav-seccion" data-scroll-spy>Video Inteligente</a>
+        <a href="#seccion14" class="nav-seccion" data-scroll-spy>Validación de Formulario</a>
+        <a href="#seccion15" class="nav-seccion" data-scroll-spy>Narrador</a>
+        
+
+    </nav>
+  </aside>
+
+   
+
     <!-- Secciones -->
-    <section class="secciones" id="seccion1"><h3>Sección 1</h3></section>
+    <main>
+    <section class="secciones" data-scroll-spy id="seccion1"><h3>Reloj Digital y Alarma Sonora</h3>
+     
+      <div class="tiempo">
+        <a class="myButton relojBtn">Reloj Digital</a>
+        <a class="myButton stopBtn">Detener Reloj</a>
+        <a class="myButton alarmaBtn">Alarma Sonora</a>
+        <a class="myButton stopAbtn">Detener Alarma</a>        
+      </div>
+      <label class="horaMilitar" for="switch">Hora Militar:</label>
+      <label class="switch">
+        <input class="btnMilitar" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+     <div class ="alarm">
+       <label>Inserte su alarma:</label>
+      <select name="horas" id="horas">
+        <option value="Hora">Hora</option>
+        <option value="00">00</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+      </select>
+      <label>:</label>
+      <select name="minutos" id="minutos">
+        <option value="Min">Min</option>
+        <option value="00">00</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+        <option value="60">60</option>
+      </select>
+      <label>:</label>
+      <select name="segundos" id="segundos">
+      <option value="Seg">Seg</option>
+      <option value="00">00</option>
+      <option value="01">01</option>
+      <option value="02">02</option>
+      <option value="03">03</option>
+      <option value="04">04</option>
+      <option value="05">05</option>
+      <option value="06">06</option>
+      <option value="07">07</option>
+      <option value="08">08</option>
+      <option value="09">09</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+      <option value="32">32</option>
+      <option value="33">33</option>
+      <option value="34">34</option>
+      <option value="35">35</option>
+      <option value="36">36</option>
+      <option value="37">37</option>
+      <option value="38">38</option>
+      <option value="39">39</option>
+      <option value="40">40</option>
+      <option value="41">41</option>
+      <option value="42">42</option>
+      <option value="43">43</option>
+      <option value="44">44</option>
+      <option value="45">45</option>
+      <option value="46">46</option>
+      <option value="47">47</option>
+      <option value="48">48</option>
+      <option value="49">49</option>
+      <option value="50">50</option>
+      <option value="51">51</option>
+      <option value="52">52</option>
+      <option value="53">53</option>
+      <option value="54">54</option>
+      <option value="55">55</option>
+      <option value="56">56</option>
+      <option value="57">57</option>
+      <option value="58">58</option>
+      <option value="59">59</option>
+      <option value="60">60</option>
+      </select>
+      <a class="myButton setAlarm">Ingresar Alarma</a> 
+
+     </div>
+     <div class="agendaAlarma">
+
+     </div>
+    </section>
     <hr />
-    <section class="secciones" id="seccion2"><h3>Sección 2</h3></section>
+    <section class="secciones" data-scroll-spy id="seccion2"><h3>Eventos del Teclado</h3>
+    <p>Para mover la pelota, simplemente utiliza las flechas del teclado.</p>
+    <p>Arriba, abajo, izquiera y derecha. </p>
+    <article class="stage"><div class="ball"></div></article>
+    </section>
     <hr />
-    <section class="secciones" id="seccion3"><h3>Sección 3</h3></section>
+    <section class="secciones" data-scroll-spy id="seccion3"><h3 class="count">Temporizador</h3></section>
     <hr />
-    <section class="secciones" id="seccion4"><h3>Sección 4</h3></section>
+    <section class="secciones" data-scroll-spy id="seccion4"><h3>Responsive con Javascript </h3>
+      <div id="youtube"></div>
+      <div id="gmaps"></div>
+      
+    </section>
     <hr />
-    <section class="secciones" id="seccion5"><h3>Sección 5</h3></section>
+    <section class="secciones" data-scroll-spy id="seccion5"><h3>Responsive Tester</h3>
+
+      <form id="responsiveT" method="post">
+        <input type="url" id="dirWeb" name="dirWeb" placeholder="Ej. https://www.google.com" required><br><br>
+        <input type="number" id="ancho" name="ancho" min=100 max=2000 placeholder="Ancho Ej. 500" required><br><br>
+        <input type="number" id="alto" name="alto" min=100 max=2000 placeholder="Alto Ej. 800" required><br><br>
+        <input type="submit" value="Abrir">
+        <input type="button" id="closeTester" name="closeTester" value="Cerrar">
+      </form>
+    
+    </section>
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion6"><h3>Detección de dispositivos<br>(User Agent)</h3>
+    <div id="user-device"></div>
+    </section>
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion7"><h3>Detección de red</h3></section>
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion8"><h3>Detección de Cámara</h3>
+    <video id="webcam" controls></video><br>
+    <button id="videocam">Encender Cámara</button>
+    </section>
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion9"><h3>Geolocalización</h3>
+    <button id="geobtn">Activar Geolocalización</button>
+    <div id="geolocation"></div>
+    </section>
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion10"><h3>Filtros de Búsquedas</h3>
+    <input type="search" placeholder="Buscar..." class="card-filter">
+    <article class="cards">
+      <figure class="card">
+        <img src="https://placeimg.com/400/400/nature" alt="Nature">
+        <figcaption>Nature</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/400/400/any" alt="Any">
+        <figcaption>Any</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/400/400/tech" alt="Tech">
+        <figcaption>Tech</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/400/400/animals" alt="Animals">
+        <figcaption>Animals</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/400/400/people" alt="People">
+        <figcaption>People</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://placeimg.com/400/400/architecture" alt="Architecture">
+        <figcaption>Architecture</figcaption>
+      </figure>
+    </article>
+    </section>
+    <br>
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion11"><h3>Sorteo Digital</h3>
+    <ul class="sorteoDigital">
+      <li class="sorteoElementos">PHP</li>
+      <li class="sorteoElementos">GIT</li>
+      <li class="sorteoElementos">Github</li>
+      <li class="sorteoElementos">Javascript</li>
+      <li class="sorteoElementos">CSS</li>
+      <li class="sorteoElementos">HTML</li>
+      <li class="sorteoElementos">React</li>
+      <li class="sorteoElementos">C++</li>
+      <li class="sorteoElementos">C#</li>
+      <li class="sorteoElementos">Phyton</li>
+      
+    </ul>
+    <button type="submit" class="botonSorteo">Iniciar Sorteo</button>
+    
+    </section>
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion12"><h3>Responsive Slider</h3>
+    <div class="sliderResp">
+      <div class="slider-slides">
+      <div class="slider-slide active">
+        <img src="https://placeimg.com/400/400/animals" alt="Animalitos">
+      </div>
+      <div class="slider-slide"><h4>Diapositiva 2</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, impedit at! Id sequi quos corrupti, unde quo atque impedit. Saepe quaerat perspiciatis quae velit pariatur, aut voluptatem odio reiciendis repellendus?</p></div>
+      <div class="slider-slide">
+        <img src="https://placeimg.com/400/400/nature" alt="Naturaleza">
+      </div>
+      <div class="slider-slide"><h4>Diapositiva 4</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda iure consectetur quisquam modi, repellendus itaque molestiae saepe fugiat facilis cupiditate repudiandae sequi, est minus obcaecati maxime, mollitia necessitatibus temporibus amet?</p>
+      </div>
+    </div>
+    <div class="slider-btn">
+      <a href="#" class="prev">&laquo;</a><a href="#" class="next">&raquo;</a>
+    </div>
+  </div>
+    </section>
+  
+    
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion13"><h3>Video Inteligente</h3>
+    <video src="accesorios/video/Timelapse using social media.mp4" muted controls loop data-smart-video height="200px"></video>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <video src="accesorios/video/Timelapse using social media.mp4" muted controls loop data-smart-video height="200px"></video>
+    </section>
+    <hr />
+    <section class="secciones" data-scroll-spy id="seccion14"><h3>Validaciones de Formularios</h3>
+    <form action="https://formsubmit.co/26c9ec4ce2d63d52018da872386f1359" method="POST" target="_blank" id="vFormulario">
+      <legend>Envíame tus comentarios</legend>
+      <input type="text" name="name" placeholder="Escribe tu nombre y apellido" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Este campo de nombre solo acepta letras y espacios en blanco." required></input>
+      <input type="email" name="email" placeholder="Escribe tu correo" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" title="Este campo solo acepta direcciones de email." required></input>
+      <input type="text" name="subject" placeholder="Asunto a tratar" title="El asunto es requerido." required></input>
+      <textarea type="text" name="comments" cols="50" rows="5" placeholder="Escribe tu comentario" data-pattern="^.{1,255}$" title="Tu comentario debe tener al menos 1 caracter y no exceder los 255 caracteres." required></textarea>
+      <input type="submit" value="Enviar">
+
+    </form>
+    <div class="contact-form-loader none">
+      <img src="accesorios/img/puff.svg" alt="Cargando">
+    </div>
+    <div class="contact-form-response none">
+      <p>Los datos han sido enviados, gracias por contactarme.</p>
+    </div>
+    </section>
+    <hr/>
+    <section class="secciones" data-scroll-spy id="seccion15"><h3>Narrador</h3>
+     <div class="narrador">
+      <h1>Texto hablado</h1>
+      <span id="idiomas">Idioma:</span>
+      <select id="voiceSelect"></select>
+      <form id="formularioVoz">
+        <textarea name="texto" id="texto" cols="30" rows="10">
+        Escribe aquí el texto que quieres reproducir.
+        </textarea>
+        <input id="botonVoz" class="boton" type="submit" value="Reproducir">
+      </form>
+    </div>
+    </section>
+    </main>
+ 
+      <!-- Boton scrolltop-->
+      
+      <a href="#seccion1" id="scrollTopButton"></a>
+  
+      <!-- Boton modoOscuro -->
+  
+      <a id="darkModeButton"></a>
     <!-- Link a codigos -->
-    <script src="accesorios/js/js1.js"></script>
+    <script src="/MinipaginaDOM/accesorios/js/main_js.js" type="module"></script>
+    <script src="/MinipaginaDOM//accesorios/moment-develop/moment.js"></script>
   </body>
 </html>
