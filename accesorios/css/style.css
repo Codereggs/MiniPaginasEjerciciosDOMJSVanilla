@@ -272,7 +272,7 @@ select#horas, select#minutos, select#segundos {
   display: flex;
   min-height: 110vh;
   background-color: var(--main-color);
-  background-image: url("accesorios/img/football.png");
+  background-image: url("../img/football.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -283,7 +283,7 @@ select#horas, select#minutos, select#segundos {
   height: 4rem;
   border-radius: 50%;
   background-color: var(--secondary-color);
-  background-image: url("accesorios/img/pelota.png");
+  background-image: url("../img/pelota.png");
   background-size: cover;
 }
 
@@ -337,7 +337,7 @@ select#horas, select#minutos, select#segundos {
 #darkModeButton {
   display: flex;
   align-items: center;
-  background-image: url("accesorios/img/Luna.png");
+  background-image: url("../img/Luna.png");
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
