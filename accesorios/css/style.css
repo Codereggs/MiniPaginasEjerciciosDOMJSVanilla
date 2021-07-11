@@ -433,6 +433,12 @@ input#ancho::placeholder, input#alto::placeholder {
   grid-row-gap: 2%;
 }
 
+@media screen and (max-width: 530px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit,minmax(100px, 1fr));
+  }
+}
+
 .card {
   background-color: var(--nav-color);
   color: var(--secondary-color);
@@ -742,4 +748,10 @@ input#ancho::placeholder, input#alto::placeholder {
 
  #texto {
    resize: none;
+ }
+
+ /*Deteccion de red*/
+
+ #user-device ul {
+   padding-left: 0px !important;
  }

@@ -59,9 +59,25 @@ export default function userDeviceInfo(id) {
     $id.innerHTML +=
       "<br><p><mark>Este contenido solo se ve en Windows<mark></p>";
   }
-/*
-  //*Redirecciones*
-  if (isMobile.android()) {
-    w.location.href = "https://codereggs.tech/wordpress";
-  }*/
+
+  //*Redirecciones o opciones adicionales en teléfonos*
+  if (isMobile.any()) {
+    //Para redireccionar
+    //w.location.href = "https://codereggs.tech/wordpress";
+    let $videoI = d.querySelectorAll(".smartVideo");
+    $videoI.forEach(video => {
+      video.setAttribute("height","150px");
+    })
+
+    const $cancha = d.querySelectorAll('#seccion2>p,#seccion2>article'),
+    $seccion = d.querySelector('#seccion2'),
+    $mensaje = d.createElement('p');
+    $mensaje.innerText = "Esta sección solo funciona en computadoras ya que son eventos del teclado.";
+    $cancha.forEach(elemento => {
+      elemento.classList.add("none");
+    })
+    $seccion.insertAdjacentElement("beforeend",$mensaje);
+    
+
+  }
 }
